@@ -1,0 +1,79 @@
+# version: '3.8'
+
+services:
+  backend:
+    container_name: fast-api
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    image: fast-api:latest
+    ports:
+      - "8000:8000"
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_HOST: ${POSTGRES_HOST}
+      POSTGRES_PORT: ${POSTGRES_PORT}
+
+    volumes:
+      - ./backend/src:/app/src
+
+    depends_on:
+      - db #to avoid any crash if db is not started and backend hits some request
+
+
+  frontend:
+    container_name: react-app
+    build: 
+      context: ./frontend
+      dockerfile: Dockerfile
+    image: react-app:latest
+
+    ports:
+      #  hosts port and container port
+      - "5173:5173"
+
+    volumes:
+      - ./frontend:/app #mounts current host to container app directory
+      - /app/node_modules #avoids overwrites in it
+    
+    environment:
+      - CHOKIDAR_USEPOLLING=true  #frontend app will watch the file changes
+  
+
+  #database setup
+  db:
+    image: postgres
+    restart: always
+    container_name: postgres-db
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+    #adminer to see the database on browser
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: pgadmin
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL}
+      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD}
+    ports:
+      - "8081:80"  # access pgAdmin on localhost:8081
+    volumes:
+      - pgadmin_data:/var/lib/pgadmin
+    depends_on:
+      - db
+    
+
+volumes:
+  postgres_data:
+  pgadmin_data:
+
