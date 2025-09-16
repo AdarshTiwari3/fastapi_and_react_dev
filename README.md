@@ -10,8 +10,9 @@ This project is a full-stack web application with:
 
 ---
 
-<!-- ## 📁 Project Structure -->
-<pre> ```text 📁 Project Structure
+## 📁 Project Structure
+
+<pre> ```
 ├── backend/
 │ ├── src/
 │ │ ├── api/
