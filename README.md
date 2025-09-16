@@ -12,44 +12,7 @@ This project is a full-stack web application with:
 
 ## 📁 Project Structure
 
-.
-├── backend/
-│ ├── src/
-│ │ ├── api/
-│ │ │ └── v1/
-| | │ │ │ ├── auth/
-| | | │ │ │ ├── controller.py
-| | | │ │ │ ├── model.py
-| | | │ │ │ ├── service.py
-| | | │ │ │ └── utils.py
-│ │ ├── config/
-│ │ │ └── settings.py
-│ │ ├── database/
-│ │ │ └── database.py
-│ │ ├── entities/
-│ │ │ └── user.py
-│ │ ├── main.py
-│ │ └── routes.py
-│ ├── Dockerfile
-│ └── pyproject.toml
-│
-├── frontend/
-│ ├── public/
-│ ├── src/
-│ │ ├── assets/
-│ │ ├── components/
-│ │ │ └── hooks/
-│ │ │ └── files/
-│ │ └── App.tsx
-│ ├── Dockerfile
-│ ├── package.json
-│ └── vite.config.ts
-│
-├── docker-compose.yaml
-├── .env
-└── README.md
-
----
+## <pre> `text 📁 Project Structure ├── backend/ │ ├── src/ │ │ ├── api/ │ │ │ └── v1/ │ │ │ ├── auth/ │ │ │ │ ├── controller.py │ │ │ │ ├── model.py │ │ │ │ ├── service.py │ │ │ │ └── utils.py │ │ ├── config/ │ │ │ └── settings.py │ │ ├── database/ │ │ │ └── database.py │ │ ├── entities/ │ │ │ └── user.py │ │ ├── main.py │ │ └── routes.py │ ├── Dockerfile │ └── pyproject.toml ├── frontend/ │ ├── public/ │ ├── src/ │ │ ├── assets/ │ │ ├── components/ │ │ │ ├── hooks/ │ │ │ └── files/ │ │ └── App.tsx │ ├── Dockerfile │ ├── package.json │ └── vite.config.ts ├── docker-compose.yaml ├── .env └── README.md ` </pre>
 
 ## 🚀 Getting Started
 
