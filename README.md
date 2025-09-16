@@ -12,7 +12,7 @@ This project is a full-stack web application with:
 
 ## 📁 Project Structure
 
-<pre> ```
+<pre> 
 ├── backend/
 │ ├── src/
 │ │ ├── api/
