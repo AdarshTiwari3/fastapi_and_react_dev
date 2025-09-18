@@ -6,7 +6,7 @@ const UseStateHook = () => {
     setCount((prev) => prev + 1);
   };
   return (
-    <div className="bg-gray-500 p-2">
+    <div className="bg-gray-500  p-2">
       <div>
         <p className="text-center">UseState Hook Practice</p>
       </div>

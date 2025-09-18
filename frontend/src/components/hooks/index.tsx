@@ -53,7 +53,7 @@ const Hooks = () => {
       <h4 className="bg-slate-700 text-white font-semibold p-1 text-center">
         Hooks Practice
       </h4>
-      <div className="flex gap-2 bg-gray-600 justify-center">
+      <div className="flex gap-2 bg-gray-600 justify-center overflow-auto">
         {hooksArray.map((hooks, index) => {
           return (
             <p
@@ -72,7 +72,7 @@ const Hooks = () => {
           );
         })}
       </div>
-      <div>{renderTabContent()}</div>
+      <div className="h-full">{renderTabContent()}</div>
     </div>
   );
 };
